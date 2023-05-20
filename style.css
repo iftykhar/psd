@@ -1,0 +1,131 @@
+.topColor{
+    background-color: #08526d;
+    
+}
+
+.t-color{
+    color: #08526d;
+}
+.t-border{
+    border-color: #08526d;
+    border: 2px;
+}
+
+.over-color{
+    background: #f0f5f7;
+}
+
+.dev{
+    background: url('assets/images/image.png');
+    height: 100vh;
+    background-size: cover;
+    z-index: 1;
+    position: relative;
+}
+
+.dev::before{
+    content: "";
+    clear: both;
+    display: block;
+
+    background-color: rgba(0, 0, 0, .5);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.bton{
+    display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        background-color: none;
+        
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+}
+
+.bttn{
+    display: inline;
+    /* padding: auto; */
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border: 3px;
+    border-color: #08526d;
+    border-radius: 2px;
+}
+
+.s-image{
+    height: 70vh;
+    width: 98vw;
+    background: url('assets/images/testimonial-bg.png');
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+}
+
+.s-image::after{
+    content: "";
+    clear: both;
+    display: block;
+
+    background-color: rgba(0, 0, 0, .5);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.man{
+    height: 100vh;
+    width: 50vw;
+    /* background-color: #08526d; */
+    background:url('assets/images/man.png');
+    background-size: cover;
+}
+.btn{
+    border-radius: 0;
+    transition: all 0.3s;
+}
+
+.btn:hover{
+    transform: scale(1.1);
+}
+
+
+.card{
+    transition: all 0.3s;
+
+}
+
+.card:hover{
+    transform: scale(1.05);
+}
+.card .card-header {
+    transition: all;
+  }
+  
+  .card:hover .card-header {
+    background-color: red;
+    color: white;
+  }
+  .card:hover .card-header h2{
+    color: white;
+  }
+
+  .card:hover a {
+    background-color: #08526d  !important;
+}
