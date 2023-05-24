@@ -1,57 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.7.0/css/bootstrap.min.css">
-  <style>
-    .navbar {
-      background-color: none;
-    }
+  <title>Tiny Slider Example</title>
 
-    .navbar-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .navbar-contact span {
-      margin-right: 10px;
-    }
-
-    .navbar-actions {
-      display: flex;
-      align-items: center;
-    }
-
-    .navbar-actions .action-button {
-      margin-left: 10px;
-      padding: 5px 10px;
-      border: 1px solid red;
-    }
-  </style>
-  <title>Top Navbar</title>
+  <!-- Include Tiny Slider CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
 </head>
-
 <body>
-  <nav class="navbar navbar-expand-lg">
-    <div class="container">
-      <div class="navbar-content">
-        <div class="navbar-contact">
-          <span class="small"><i class="fa fa-phone px-1 small" aria-hidden="true"></i>011223344</span>
-          <span class="small"><i class="fa fa-envelope px-1 small" aria-hidden="true"></i>abcd@mail.com</span>
-        </div>
-        <div class="navbar-actions">
-          <span class="small">Let's work!</span>
-          <span class="small border border-red action-button">Get Quote</span>
-        </div>
-      </div>
+  <div id="base">
+    <div>
+      <img src="assets/images/image.png" alt="Slide 1">
     </div>
-  </nav>
+    <div>
+      <img src="assets/images/image.png" alt="Slide 2">
+    </div>
+    <div>
+      <img src="assets/images/image.png" alt="Slide 3">
+    </div>
+    <div>
+      <img src="assets/images/image.png" alt="Slide 4">
+    </div>
+  </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.7.0/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+  <!-- Include Tiny Slider JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/min/tiny-slider.js"></script>
+  <script>
+    var slider = tns({
+      container: '#base',
+      items: 1,
+      slideBy: 'page',
+      mouseDrag: true,
+      swipeAngle: false,
+      speed: 400
+    });
+  </script>
 </body>
-
 </html>

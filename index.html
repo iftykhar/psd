@@ -83,18 +83,21 @@
               <span class="p-1">We’re an Independent</span> <br> Design and <span class="bg-danger text-white p-1 m-1">Development </span><br>Agency
             </h1>
           </div> -->
-          <div class="my-slider">
-            <div>
-                <img src="assets/images/image.png" height="100%" width="100%" alt="">
-
-            </div>
-            <div>
-                <img src="assets/images/image.png" height="100%" width="100%" alt="">
-                
-            </div>
-            <div>
-                <img src="assets/images/image.png" height="100%" width="100%" alt="">
-            </div>
+          <div class="base">
+            <div id=" " >
+                <div>
+                  <img src="assets/images/image.png" alt="Slide 1">
+                </div>
+                <div>
+                  <img src="assets/images/image.png" alt="Slide 2">
+                </div>
+                <div>
+                  <img src="assets/images/image.png" alt="Slide 3">
+                </div>
+                <div>
+                  <img src="assets/images/image.png" alt="Slide 4">
+                </div>
+              </div>
           </div>
         </div>
       </section>
@@ -669,16 +672,17 @@
     // Add scroll event listener to trigger the animation
     window.addEventListener('scroll', handleScroll);
 
-
-    var slider = tns({
-        container: '#base',
-        items: 3,
-        slideBy: 'page',
-        mouseDrag: true,
-        swipeAngle: false,
-        speed: 400
-    });
   </script>
- 
+     <script>
+        var slider = tns({
+          container: '#base',
+          items: 2,
+          slideBy: 'page',
+          mouseDrag: true,
+          swipeAngle: false,
+          speed: 400
+        });
+      </script>
+
 </body>
 </html>
