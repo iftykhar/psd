@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="style.css">
     <title>Development</title>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-
+    <!-- slider package -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
 </head>
 <body>
     <!-- top contact section  -->
@@ -82,20 +83,18 @@
               <span class="p-1">We’re an Independent</span> <br> Design and <span class="bg-danger text-white p-1 m-1">Development </span><br>Agency
             </h1>
           </div> -->
-          <div class="swiper-container">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="assets/images/image.png" alt="Image 1">
-              </div>
-              <div class="swiper-slide">
-                <img src="assets/images/image.png" alt="Image 2">
-              </div>
-              <div class="swiper-slide">
-                <img src="assets/images/image.png" alt="Image 3">
-              </div>
-              <!-- Add more slides as needed -->
+          <div class="my-slider">
+            <div>
+                <img src="assets/images/image.png" height="100%" width="100%" alt="">
+
             </div>
-            <div class="swiper-pagination"></div>
+            <div>
+                <img src="assets/images/image.png" height="100%" width="100%" alt="">
+                
+            </div>
+            <div>
+                <img src="assets/images/image.png" height="100%" width="100%" alt="">
+            </div>
           </div>
         </div>
       </section>
@@ -607,6 +606,7 @@
  <script src="assets/js/waypoints.min.js"></script>
 <script src="assets/js/jquery.counterup.min.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
   <script>
      var swiper = new Swiper('.swiper-container', {
     slidesPerView: 1,
@@ -668,6 +668,16 @@
   
     // Add scroll event listener to trigger the animation
     window.addEventListener('scroll', handleScroll);
+
+
+    var slider = tns({
+        container: '#base',
+        items: 3,
+        slideBy: 'page',
+        mouseDrag: true,
+        swipeAngle: false,
+        speed: 400
+    });
   </script>
  
 </body>
