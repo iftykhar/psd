@@ -118,21 +118,127 @@
     position: relative;
   }
   
-  .swiper-container {
-    width: 100%;
-    height: 100%;
+
+  /* Container for the slider */
+  .slider {
+    display: block;
+    overflow: hidden;
+  }
+
+  /* Individual slide item */
+  .slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 600px; /* Adjust the height as needed */
+    width: 100%; /* Adjust the width as needed */
   }
   
-  .swiper-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  .slider-primary{
+    width:100%;
+    margin:auto;
+    overflow: hidden;
+    position: relative;
   }
   
-  /* Hide navigation buttons */
-  .swiper-button-prev,
-  .swiper-button-next {
-    display: none;
+  
+  .slider-secondary{
+    width:100%;
+    height:600px;
+    position:relative;
+    overflow:hidden;
+    float:left;
+  
+  }
+  
+  .slider-secondary img{
+    display:none;
+    width:100%;
+    height:100%;
+  }
+  
+  .slider-secondary img.current{
+    display:inline-block;
+  }
+  
+  .previous {
+    margin-left: 35px;
+    z-index: 100;
+  }
+  
+  .next {
+    margin-left: -65px;
+    z-index: 100;
+  }
+  
+  .slider-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    background-color: gray;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .dot.active {
+    background-color: blue;
+  }
+  /* CSS for the images inside the slide */
+  .slide img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .slider {
+    position: relative;
+  }
+
+  .slider .slide {
+    position: relative;
+  }
+
+  .slider .slide img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .slider .slide .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust overlay color and opacity */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .slider .slide:hover .overlay {
+    opacity: 1;
+  }
+
+  .slider .slide .container {
+    max-width: 800px;
+    text-align: center;
+  }
+
+  .slider .slide #typed {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease;
   }
   
 .bton{

@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <!-- slider package -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+    <!-- Other head elements -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tiny-slider/dist/tiny-slider.css">
 </head>
 <body>
     <!-- top contact section  -->
@@ -73,32 +75,63 @@
           </div>
         </div>
       </nav>
-      
-
-    <!-- development section  -->
-    <section class="dev">
-        <div class="">
-          <!-- <div class="container py-5">
+       <!-- <div class="container py-5">
             <h1 class="text-capitalize text-white py-5 my-5 h1 lh-base">
               <span class="p-1">We’re an Independent</span> <br> Design and <span class="bg-danger text-white p-1 m-1">Development </span><br>Agency
             </h1>
           </div> -->
-          <div class="base">
-            <div id=" " >
-                <div>
-                  <img src="assets/images/image.png" alt="Slide 1">
-                </div>
-                <div>
-                  <img src="assets/images/image.png" alt="Slide 2">
-                </div>
-                <div>
-                  <img src="assets/images/image.png" alt="Slide 3">
-                </div>
-                <div>
-                  <img src="assets/images/image.png" alt="Slide 4">
+
+    <!-- development section  -->
+    <section class="dev">
+        <div class="">
+         
+          <div class="slider">
+            <div class="slider-wrapper">
+              <div class="slide">
+                <img src="assets/images/image.png" alt="Slide 1">
+                <div class="overlay"></div>
+                <div class="container py-5">
+                    <h1 class="text-capitalize text-white py-5 my-5 h1 lh-base">
+                      <span id="typed"></span>
+                    </h1>
                 </div>
               </div>
+              <div class="slide">
+                <img src="assets/images/latest-image.png" alt="Slide 2">
+                <div class="overlay"></div>
+                <div class="container py-5">
+                    <h1 class="text-capitalize text-white py-5 my-5 h1 lh-base">
+                      <span id="typed"></span>
+                    </h1>
+                </div>
+              </div>
+              <div class="slide">
+                <img src="assets/images/featured_work-15.png" alt="Slide 3">
+                <div class="overlay"></div>
+                <div class="container py-5">
+                    <h1 class="text-capitalize text-white py-5 my-5 h1 lh-base">
+                      <span id="typed"></span>
+                    </h1>
+                </div>
+              </div>
+              <div class="slide">
+                <img src="assets/images/featured_work-17.png" alt="Slide 4">
+                <div class="overlay"></div>
+                <div class="container py-5">
+                    <h1 class="text-capitalize text-white py-5 my-5 h1 lh-base">
+                      <span id="typed"></span>
+                    </h1>
+                </div>
+              </div>
+            </div>
+            <div class="slider-dots">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
           </div>
+          
         </div>
       </section>
       
@@ -610,6 +643,7 @@
 <script src="assets/js/jquery.counterup.min.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
   <script>
      var swiper = new Swiper('.swiper-container', {
     slidesPerView: 1,
@@ -673,16 +707,208 @@
     window.addEventListener('scroll', handleScroll);
 
   </script>
-     <script>
-        var slider = tns({
-          container: '#base',
-          items: 2,
-          slideBy: 'page',
-          mouseDrag: true,
-          swipeAngle: false,
-          speed: 400
-        });
-      </script>
+     
+ <!-- <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var slider = tns({
+        container: '#your-slider-container', // Replace with your container ID
+        items: 1, // Number of items per slide
+        controls: true,// Enable the buttons
+        nav: true, // Enable the dots navigation
+        slideBy: 'page', // Slide by page
+        mouseDrag: true, // Enable mouse drag
+        swipeAngle: false, // Disable swipe angle
+        speed: 400 // Slide transition speed in milliseconds
+        // Add more configuration options as needed
+      });
+    });
+  </script> -->
+
+
+  <script>
+    var slider = tns({
+      container: '.slider-wrapper',
+      items: 1,
+      slideBy: 'page',
+      mouseDrag: true,
+      swipeAngle: false,
+      speed: 1000,
+      navContainer: '.slider-dots',
+      controls: false,
+      autoplay: true,
+      autoplayButtonOutput: false,
+      autoplayTimeout: 3000,
+      autoplayHoverPause: true,
+      autoplayButton: false,
+      autoplayButtonPrev: false,
+      autoplayButtonNext: false
+    });
+  </script>
+  <script>
+    // Initialize Typed.js
+    var typed = new Typed('#typed', {
+      strings: ["We’re an Independent", "Design and Development", "Agency"],
+      typeSpeed: 100,
+      backSpeed: 50,
+      loop: true,
+      fadeOut: true,
+      fadeOutClass: 'typed-fade-out',
+      fadeOutDelay: 500,
+    });
+  
+    // Listen for the animation end event to show the overlay
+    var overlay = document.querySelector('.overlay');
+    var typedElement = document.querySelector('#typed');
+    typedElement.addEventListener('animationend', function () {
+      overlay.style.opacity = 1;
+    });
+  </script>
+
+  <!-- <script>
+    $(document).ready(function() {
+      function autoSlide() {
+        var currentImg = $('.current');
+        var nextImg = currentImg.next();
+  
+        if (nextImg.length == 0) {
+          nextImg = $('.slider-secondary img').first();
+        }
+  
+        currentImg.removeClass('current');
+        nextImg.addClass('current');
+      }
+  
+      var interval = setInterval(autoSlide, 3000);
+  
+      $('.previous').on('click', function() {
+        clearInterval(interval);
+  
+        var currentImg = $('.current');
+        var prevImg = currentImg.prev();
+  
+        if (prevImg.length == 0) {
+          prevImg = $('.slider-secondary img').last();
+        }
+  
+        currentImg.removeClass('current');
+        prevImg.addClass('current');
+  
+        interval = setInterval(autoSlide, 3000);
+      });
+  
+      $('.next').on('click', function() {
+        clearInterval(interval);
+  
+        var currentImg = $('.current');
+        var nextImg = currentImg.next();
+  
+        if (nextImg.length == 0) {
+          nextImg = $('.slider-secondary img').first();
+        }
+  
+        currentImg.removeClass('current');
+        nextImg.addClass('current');
+  
+        interval = setInterval(autoSlide, 3000);
+      });
+    });
+  </script> -->
+  
+  <!-- <script>
+    $(document).ready(function() {
+  var intervalId;
+
+  function startSlider() {
+    intervalId = setInterval(function() {
+      var currentImg = $('.current');
+      var nextImg = currentImg.next();
+
+      if (nextImg.length == 0) {
+        nextImg = $('.slider-secondary img').first();
+      }
+
+      currentImg.removeClass('current');
+      nextImg.addClass('current');
+
+      var currentIndex = $('.slider-secondary img').index(nextImg);
+      updateDot(currentIndex);
+    }, 3000); // Change slide every 3 seconds
+  }
+
+  function stopSlider() {
+    clearInterval(intervalId);
+  }
+
+  $('.next').on('click', function() {
+    stopSlider();
+
+    var currentImg = $('.current');
+    var nextImg = currentImg.next();
+
+    if (nextImg.length == 0) {
+      nextImg = $('.slider-secondary img').first();
+    }
+
+    currentImg.removeClass('current');
+    nextImg.addClass('current');
+
+    var currentIndex = $('.slider-secondary img').index(nextImg);
+    updateDot(currentIndex);
+
+    startSlider();
+  });
+
+  $('.previous').on('click', function() {
+    stopSlider();
+
+    var currentImg = $('.current');
+    var prevImg = currentImg.prev();
+
+    if (prevImg.length == 0) {
+      prevImg = $('.slider-secondary img').last();
+    }
+
+    currentImg.removeClass('current');
+    prevImg.addClass('current');
+
+    var currentIndex = $('.slider-secondary img').index(prevImg);
+    updateDot(currentIndex);
+
+    startSlider();
+  });
+
+  $('.slider-secondary img').on('mouseenter', function() {
+    stopSlider();
+  });
+
+  $('.slider-secondary img').on('mouseleave', function() {
+    startSlider();
+  });
+
+  $('.dot').on('click', function() {
+    stopSlider();
+
+    var index = $(this).index();
+    var currentImg = $('.current');
+    var targetImg = $('.slider-secondary img').eq(index);
+
+    currentImg.removeClass('current');
+    targetImg.addClass('current');
+
+    updateDot(index);
+
+    startSlider();
+  });
+
+  function updateDot(index) {
+    $('.dot').removeClass('active');
+    $('.dot').eq(index).addClass('active');
+  }
+
+  startSlider();
+});
+
+  </script> -->
 
 </body>
 </html>
